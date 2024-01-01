@@ -58,20 +58,20 @@ func (frame *ChatFrame) SetMaximum(size int) {
 
 // Set maximum ML API URL
 func (frame *ChatFrame) SetBotName(botName string) {
-	frame.MLApiUrl = botName
+	frame.BotName = botName
 }
 
 // Set maximum ML API URL
 func (frame *ChatFrame) SetMLApiUrl(url string) {
-	frame.BotName = url
+	frame.MLApiUrl = url
 }
 
 // Is the Chat Frame Ready for Use
 func (frame ChatFrame) IsReady() bool {
-	if len(frame.MessageFrame) == frame.MaxSize {
-		return true
-	} else {
+	if len(frame.MessageFrame) != frame.MaxSize {
 		return false
+	} else {
+		return true
 	}
 }
 

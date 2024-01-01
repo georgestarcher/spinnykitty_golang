@@ -10,10 +10,6 @@ import (
 	"github.com/gempir/go-twitch-irc/v4"
 )
 
-//const ChannelName string = "generikb"
-
-const MaxChatFrameSize int = 5
-
 type Secrets struct {
 	TwitchUser  string `json:"twitchUser"`
 	TwitchOauth string `json:"twitchOauth"`
@@ -57,7 +53,9 @@ func main() {
 	var chatFrame spinnykitty.ChatFrame
 	chatFrame.SetMaximum(config.MaxChatFrameSize)
 	chatFrame.SetMLApiUrl(config.MLApiUrl)
-	chatFrame.SetBotName((config.TwitchBotName))
+	chatFrame.SetBotName(config.TwitchBotName)
+
+	fmt.Println(chatFrame)
 
 	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
 		fmt.Println(message.User.Name + ":" + message.Message)

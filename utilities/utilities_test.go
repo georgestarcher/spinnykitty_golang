@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// Test Setup and Calling Splunk Login. Expected Error
+// Test Empty Mean slice input
 func TestEmptyMean(t *testing.T) {
 
 	var testSlice []int
@@ -19,6 +19,7 @@ func TestEmptyMean(t *testing.T) {
 	log.Println(got)
 }
 
+// Test Valid Mean slice input
 func TestMean(t *testing.T) {
 
 	testSlice := make([]int, 5)
