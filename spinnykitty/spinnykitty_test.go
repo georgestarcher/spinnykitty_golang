@@ -1,12 +1,11 @@
 package spinnykitty
 
 import (
-	"log"
 	"testing"
 )
 
 // Test Setting Frame Size to int 5
-func TestChatFrameSetValidMax(t *testing.T) {
+func TestSetMaximum(t *testing.T) {
 
 	TestChatFrame := new(ChatFrame)
 	TestChatFrame.SetMaximum(5)
@@ -17,11 +16,10 @@ func TestChatFrameSetValidMax(t *testing.T) {
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
-	log.Println(got)
 }
 
 // Test Setting Frame ML API URL
-func TestChatFrameSetValidAPIUrl(t *testing.T) {
+func TestSetMLApiUrl(t *testing.T) {
 
 	TestChatFrame := new(ChatFrame)
 
@@ -30,21 +28,17 @@ func TestChatFrameSetValidAPIUrl(t *testing.T) {
 	want := "http://127.0.0.1:5000/spinny"
 	got := TestChatFrame.MLApiUrl
 
-	log.Println(TestChatFrame.MLApiUrl)
-
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
-	log.Println(got)
 }
 
 // Test Setting Frame Bot Name
-func TestChatFrameSetValidBotName(t *testing.T) {
+func TestSetBotName(t *testing.T) {
 
 	TestChatFrame := new(ChatFrame)
 
 	TestChatFrame.SetBotName("fossabot")
-	log.Println(TestChatFrame)
 
 	want := "fossabot"
 	got := TestChatFrame.BotName
@@ -52,11 +46,10 @@ func TestChatFrameSetValidBotName(t *testing.T) {
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
-	log.Println(got)
 }
 
 // Test Empty Feature Frame Bot Name
-func TestChatFrameEmptyFeatures(t *testing.T) {
+func TestFeatures(t *testing.T) {
 
 	TestChatFrame := new(ChatFrame)
 
@@ -68,10 +61,9 @@ func TestChatFrameEmptyFeatures(t *testing.T) {
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
-	log.Println(got)
 }
 
-func TestChatFrameEmptyReady(t *testing.T) {
+func TestIsReady(t *testing.T) {
 
 	TestChatFrame := new(ChatFrame)
 	TestChatFrame.SetMaximum(5)
@@ -82,10 +74,9 @@ func TestChatFrameEmptyReady(t *testing.T) {
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
-	log.Println(got)
 }
 
-func TestChatFrameEmptyKitty(t *testing.T) {
+func TestIsSpinny(t *testing.T) {
 
 	TestChatFrame := new(ChatFrame)
 	TestChatFrame.SetMaximum(5)
@@ -96,5 +87,4 @@ func TestChatFrameEmptyKitty(t *testing.T) {
 	if got != want {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
-	log.Println(got)
 }
